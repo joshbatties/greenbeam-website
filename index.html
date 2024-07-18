@@ -7,6 +7,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#footer {
+				background-color: black;
+				color: white;
+				padding: 20px 0;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+			}
+	
+			.footer-logo {
+				max-width: 100px; /* Adjust this size as needed */
+				margin-right: 20px; /* Space between logo and text */
+			}
+	
+			.footer-text {
+				margin: 0;
+				padding: 10px 20px;
+				border-top: 1px solid white;
+			}
+		</style>	
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -16,8 +39,8 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">JPC Timber</a></h1>
-								<img src="images/jpc_logo_white.png" alt="JPC Logo">
+								<h1>JPC Timber</h1>
+								<img src="images/jpc_logo_white.png" alt="JPC Logo" style="width: 210px; height: auto; margin-bottom: 10px;">
 							</header>
 						</div>
 
@@ -45,7 +68,7 @@
 			<!-- Banner -->
 				<section id="banner">
 					<header>
-						<h2><strong>Our Products</strong></h2>
+						<h2>Our <strong>Products</strong></h2>
 						<p>Browse some of our most popular products.</p></header></section>
 
 			<!-- Carousel -->
@@ -76,35 +99,34 @@
 				</section>
 
 
-<!-- Four -->
-<section id="four" class="wrapper style1 special fade-up">
-    <div class="container">
-        <header class="major">
-            <h2>Our Services</h2>
-        </header>
-        <div class="box alt">
-            <div class="row gtr-uniform">
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <h3>Installation</h3>
-                    <img src="images/maintenance.png" alt="Installation">
-                </section>
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <h3>Sand & Finish</h3>
-                    <img src="images/sanding.png" alt="Sanding">
-                </section>
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <h3>Maintenance & Care</h3>
-                    <img src="images/maintenance (1).png" alt="Maintenance">
-                </section>
-            </div>
-        </div>
-        <footer class="major">
-            <ul class="actions special">
-                <li><a href="#" class="button">Find out more</a></li>
-            </ul>
-        </footer>
-    </div>
-</section>
+				<section id="four" class="wrapper style1 special fade-up">
+					<div class="container">
+						<header class="major">
+							<h2>Our <strong>Services</strong></h2>
+						</header>
+						<div class="box alt">
+							<div class="row gtr-uniform">
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<img src="images/maintenance.png" alt="Installation" style="width: 70px; height: auto; margin-bottom: 10px;">
+									<h3>Installation</h3>
+									</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<img src="images/sanding.png" alt="Sand & Finish" style="width: 70px; height: auto; margin-bottom: 10px;">
+									<h3>Sand & Finish</h3>
+									</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<img src="images/maintenance (1).png" alt="Maintenance & Care" style="width: 70px; height: auto; margin-bottom: 10px;">
+									<h3>Maintenance & Care</h3>
+									</section>	
+							</div>
+						</div>
+						<footer class="major" style="margin-top: -40px;"> <!-- Adjust margin-top to move the button upwards -->
+							<ul class="actions special">
+								<li><a href="services.html" class="button">Find out more</a></li>
+							</ul>
+						</footer>
+					</div>
+				</section>	
 
 							
 			<!-- Five -->
@@ -128,31 +150,12 @@
 		</section>
 			
 			
-				<div id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<!-- Contact -->
-									<section class="contact">
-										<ul class="icons">
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-										</ul>
-									</section>
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; JPC Timber. All rights reserved.</li><li>Design: Joshua Batties</li>
-										</ul>
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div id="footer">
+			<img src="images/jpc_logo_white.png" alt="Logo" class="footer-logo">
+			<p class="footer-text">
+				We acknowledge First Nations Peoples as the Traditional Custodians and Lore Keepers of the oldest living culture and pay respects to their Elders past and present. We extend that respect to all First Nations Peoples.
+			</p>
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

@@ -2249,7 +2249,7 @@ input, select, textarea {
 	}
 
 		body.homepage #header h1 {
-			font-size: 4em;
+			font-size: 6em;
 		}
 
 		body.homepage #header:after {
@@ -2453,18 +2453,18 @@ input, select, textarea {
 			padding-top: 2em;
 		}
 
-/* Footer */
+		/* Footer */
 
 	#footer {
 		position: relative;
 		overflow: hidden;
 		padding: 6em 0 6em 0;
-		background: white;
+		background: black;
 		color: black;
 	}
 
 		#footer .icon.circled {
-			background: #fff;
+			background: black;
 			color: black;
 		}
 
@@ -2500,6 +2500,7 @@ input, select, textarea {
 				#footer .copyright a:hover {
 					color: black;
 				}
+
 
 /* Carousel */
 
