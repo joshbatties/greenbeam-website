@@ -13,8 +13,8 @@
             overflow: hidden;
             color: white;
             text-align: center;
-            padding: 0; /* Remove padding */
-            height: 100vh; /* Full viewport height */
+            padding: 0;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,7 +27,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Ensure video is behind content */
+            z-index: -1;
         }
 
         #header .inner {
@@ -40,29 +40,58 @@
             position: relative;
             z-index: 1;
         }
-			#footer {
-				background-color: black;
-				color: white;
-				padding: 20px 0;
-				text-align: center;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: relative;
-			}
-	
-			.footer-logo {
-				max-width: 100px; /* Adjust this size as needed */
-				margin-right: 20px; /* Space between logo and text */
-			}
-	
-			.footer-text {
-				margin: 0;
-				padding: 10px 20px;
-				border-top: 1px solid white;
-				text-align: center;
-			}
-		</style>	
+
+        #footer {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .footer-logo {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .footer-text {
+            margin: 0;
+            padding: 10px 20px;
+            border-top: 1px solid white;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #banner p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        #banner p.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #banner p strong {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        #banner p strong.appear-strong {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>	
+
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -102,11 +131,23 @@
 
 				</div>
 
-			<!-- Banner -->
+
+
 				<section id="banner">
 					<header>
-						<h2>Our <strong>Products</strong></h2>
-						<p>Browse some of our most popular products.</p></header></section>
+						<h2>Our <strong>Values</strong></h2>
+						<p>Our commitment to <strong>eco-friendly</strong> materials and processes ensures that your beautiful new floors are as kind to the planet as they are your home.</p>
+						<p>We pride ourselves on delivering top-notch <strong>craftsmanship</strong> and exceptional <strong>customer service,</strong> creating a welcoming and satisfying experience for every client.</p>
+						<p>Trust us to enhance your space with floors that are not only <strong>stunning</strong> but also <strong>sustainably sourced</strong> and <strong>expertly installed.</p>
+					</header>
+				</section>
+
+							<!-- Banner -->
+							<section id="banner">
+								<header>
+									<h2>Our <strong>Products</strong></h2>
+									<p>Browse some of our most popular products.</p></header></section>
+
 
 			<!-- Carousel -->
 				<section class="carousel">
@@ -146,14 +187,17 @@
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<img src="images/maintenance.png" alt="Installation" style="width: 70px; height: auto; margin-bottom: 10px;">
 									<h3>Installation</h3>
+									<p>We handle every detail, from initial measurement to the final fitting, guaranteeing a perfect finish everytime.</p>
 									</section>
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<img src="images/sanding.png" alt="Sand & Finish" style="width: 70px; height: auto; margin-bottom: 10px;">
 									<h3>Sand & Finish</h3>
+									<p>We use top-quality equipment and products to restore the natural beauty of your floors, providing a smooth and polished look that lasts.</p>
 									</section>
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<img src="images/maintenance (1).png" alt="Maintenance & Care" style="width: 70px; height: auto; margin-bottom: 10px;">
 									<h3>Maintenance & Care</h3>
+									<p>We provide ongoing care to keep your timber floors looking new and lasting longer.</p>
 									</section>	
 							</div>
 						</div>
@@ -203,6 +247,35 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					var paragraphs = document.querySelectorAll('#banner p');
+				
+					var observer = new IntersectionObserver(function(entries) {
+						entries.forEach(function(entry) {
+							if (entry.isIntersecting) {
+								paragraphs.forEach(function(p, index) {
+									var strongTags = p.querySelectorAll('strong');
+									strongTags.forEach(function(strong, strongIndex) {
+										setTimeout(function() {
+											strong.classList.add('appear-strong');
+										}, index * 200); // Smaller delay for strong tags
+									});
+				
+									setTimeout(function() {
+										p.classList.add('appear');
+									}, index * 1000); // Larger delay for the rest of the paragraph
+								});
+								observer.disconnect(); // Stop observing after the animation has started
+							}
+						});
+					}, {
+						threshold: 0.1 // Adjust as needed (0.1 means 10% of the banner is visible)
+					});
+				
+					observer.observe(document.querySelector('#banner'));
+				});
+				</script>
 
 	</body>
 </html>
