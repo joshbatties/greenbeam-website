@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
+        /* Existing styles */
         #header {
             position: relative;
             background: none;
@@ -91,16 +92,48 @@
             transform: translateY(0);
         }
 
-		#banner img {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    margin: 0 15px; /* Add spacing between images */
+        #banner img {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            margin: 0 15px; /* Add spacing between images */
+        }
+
+        #banner img.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#banner img.appear {
-    opacity: 1;
-    transform: translateY(0);
+.fade-up-element {
+    opacity: 0; /* Ensure elements are initially hidden */
+    animation: fadeUp 1s ease-out forwards; /* Keep the final state after animation */
+}
+
+.fade-up-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-up-delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-up-delay-3 {
+    animation-delay: 0.6s;
+}
+
+.fade-up-delay-4 {
+    animation-delay: 0.8s;
 }
     </style>	
 
@@ -123,24 +156,23 @@
 						</div>
 
 					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About us</a></li>
-								<li><a href="shop.html">Shop</a></li>
-								<li>
-									<a href="services.html">Services</a>
-									<ul>
-										<li><a href="installation.html">Installation</a></li>
-										<li><a href="finish.html">Sand & Finish</a></li>
-										<li><a href="maintenance.html">Maintenance & Care</a></li>
-									</ul>
-								</li>
-								<li><a href="quotes.html">Quotes</a></li>
-								<li><a href="contact.html">Contact us</a></li>
-							</ul>
-						</nav>
-
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About us</a></li>
+							<li><a href="shop.html">Shop</a></li>
+							<li>
+								<a href="services.html">Services</a>
+								<ul>
+									<li><a href="installation.html">Installation</a></li>
+									<li><a href="finish.html">Sand & Finish</a></li>
+									<li><a href="maintenance.html">Maintenance & Care</a></li>
+								</ul>
+							</li>
+							<li><a href="quotes.html">Quotes</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</nav>
 				</div>
 
 
@@ -199,31 +231,31 @@
 						</header>
 						<div class="box alt">
 							<div class="row gtr-uniform">
-								<section class="col-4 col-6-medium col-12-xsmall">
+								<section class="col-4 col-6-medium col-12-xsmall fade-up-element fade-up-delay-1">
 									<img src="images/maintenance.png" alt="Installation" style="width: 70px; height: auto; margin-bottom: 10px;">
 									<h3>Installation</h3>
-									<p>We handle every detail, from initial measurement to the final fitting, guaranteeing a perfect finish everytime.</p>
-									</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
+									<p>We handle every detail, from initial measurement to the final fitting, guaranteeing a perfect finish every time.</p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall fade-up-element fade-up-delay-2">
 									<img src="images/sanding.png" alt="Sand & Finish" style="width: 70px; height: auto; margin-bottom: 10px;">
 									<h3>Sand & Finish</h3>
 									<p>We use top-quality equipment and products to restore the natural beauty of your floors, providing a smooth and polished look that lasts.</p>
-									</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall fade-up-element fade-up-delay-3">
 									<img src="images/maintenance (1).png" alt="Maintenance & Care" style="width: 70px; height: auto; margin-bottom: 10px;">
 									<h3>Maintenance & Care</h3>
 									<p>We provide ongoing care to keep your timber floors looking new and lasting longer.</p>
-									</section>	
+								</section>
 							</div>
 						</div>
-						<footer class="major" style="margin-top: -40px;"> <!-- Adjust margin-top to move the button upwards -->
+						<footer class="major" style="margin-top: -40px;">
 							<ul class="actions special">
-								<li><a href="services.html" class="button">Find out more</a></li>
+								<li><a href="services.html" class="button fade-up-element fade-up-delay-4">Find out more</a></li>
 							</ul>
 						</footer>
 					</div>
-				</section>	
-
+				</section>
+				
 							
 			<!-- Five -->
 			<section id="five" class="wrapper style2 special fade">
@@ -299,6 +331,27 @@
 					observer.observe(document.querySelector('#banner'));
 				});
 				</script>
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						var fadeElements = document.querySelectorAll('.fade-up-element');
+					
+						var observer = new IntersectionObserver(function(entries) {
+							entries.forEach(function(entry) {
+								if (entry.isIntersecting) {
+									entry.target.classList.add('appear');
+									observer.unobserve(entry.target);
+								}
+							});
+						}, {
+							threshold: 0.1 // Adjust as needed
+						});
+					
+						fadeElements.forEach(function(el) {
+							observer.observe(el);
+						});
+					});
+					</script>
+						
 
 	</body>
 </html>
