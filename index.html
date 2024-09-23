@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenBeam - Coming Soon</title>
     <style>
-         @font-face {
+        @font-face {
             font-family: 'VVDS Fifties';
             src: url('assets/fonts/VVDS-Fifties-Exp-Light.otf') format('opentype');
             font-weight: normal;
@@ -15,7 +15,7 @@
         body {
             font-family: 'VVDS Fifties', Arial, sans-serif;
             background-color: #f0f8f0;
-            color:#4b4a4f;
+            color: #4b4a4f;
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -34,7 +34,7 @@
             width: 90%;
         }
         .logo {
-            max-width: 400px;
+            max-width: 600px;
             width: 100%;
             height: auto;
             margin-bottom: 1rem;
@@ -48,10 +48,14 @@
             border: none;
             cursor: pointer;
             height: 40px;
+            font-family: 'VVDS Fifties', Arial, sans-serif;
+            font-size: 1.15rem;
         }
         .form-group {
             display: flex;
-            margin-top: 1rem;
+            margin: 1rem auto 0;
+            max-width: 600px; /* Adjust this to match your paragraph width */
+            width: 100%;
         }
         input[type="email"] {
             flex-grow: 1;
@@ -61,6 +65,16 @@
             border-radius: 5px 0 0 5px;
             height: 40px;
             box-sizing: border-box;
+        }
+        p {
+            font-size: 1.65rem; /* Increased font size */
+            max-width: 600px; /* Set a max-width for better readability */
+            margin: 1rem auto;
+        }
+
+        h2 {
+            font-size: 2.5rem; /* Increased font size */
+            margin: 0 0 1rem;
         }
         @media (max-width: 480px) {
             .form-group {
@@ -83,7 +97,7 @@
         <img src="images/GreenBeam.png" alt="GreenBeam Logo" class="logo">
         <h2>Coming Soon</h2>
         <p>We're building a sustainable future with environmentally friendly structural timber solutions.</p>
-         <form onsubmit="event.preventDefault(); alert('Thank you for your interest! We\'ll keep you updated.');">
+        <form onsubmit="event.preventDefault(); alert('Thank you for your interest! We\'ll keep you updated.');">
             <div class="form-group">
                 <input type="email" placeholder="example@email.com" required>
                 <button type="submit" class="cta">Stay Updated</button>
