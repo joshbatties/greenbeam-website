@@ -138,3 +138,78 @@
   background: linear-gradient(to top, #4fa800, transparent);
 }
 
+/* Copy indicator animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 5px); }
+  20% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -5px); }
+}
+
+.animate-fade-in {
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Enhance page transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.slide-up-delay-1 {
+  animation: slideUp 0.8s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.slide-up-delay-2 {
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+/* Add smooth text reveal */
+@keyframes textReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+.text-reveal {
+  animation: textReveal 0.8s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+  clip-path: inset(0 100% 0 0);
+}
+
+.text-reveal-delay-1 {
+  animation: textReveal 0.8s cubic-bezier(0.5, 0, 0.1, 1) 0.2s forwards;
+  clip-path: inset(0 100% 0 0);
+}
+
+.text-reveal-delay-2 {
+  animation: textReveal 0.8s cubic-bezier(0.5, 0, 0.1, 1) 0.4s forwards;
+  clip-path: inset(0 100% 0 0);
+}
