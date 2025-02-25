@@ -79,7 +79,7 @@ export default function SubscribeForm({ onSuccess }: SubscribeFormProps) {
       <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 w-full">
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Stay updated with our latest news"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLoading || isSubscribed}
@@ -89,7 +89,7 @@ export default function SubscribeForm({ onSuccess }: SubscribeFormProps) {
         <button
           type="submit"
           disabled={isLoading || isSubscribed}
-          className="px-8 py-4 text-base sm:text-lg bg-white bg-opacity-90 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm hover:shadow-md relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed sm:w-auto w-full"
+          className="px-8 py-4 text-md sm:text-lg bg-white bg-opacity-90 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-gray-400 shadow-sm hover:shadow-md relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed sm:w-auto w-full"
         >
           {isLoading ? (
             <span className="flex items-center justify-center">
@@ -103,7 +103,7 @@ export default function SubscribeForm({ onSuccess }: SubscribeFormProps) {
             </span>
           ) : (
             <span className="flex items-center justify-center">
-              Stay Updated
+              Subscribe
             </span>
           )}
         </button>
