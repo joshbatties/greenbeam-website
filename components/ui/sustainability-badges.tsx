@@ -27,7 +27,7 @@ export default function SustainabilityBadges() {
     },
     {
       icon: <Award size={16} className="text-[#4fa800]" />,
-      text: "Green Star"
+      text: "Durable"
     }
   ]
 

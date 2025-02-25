@@ -103,7 +103,7 @@ export default function SubscribeForm({ onSuccess }: SubscribeFormProps) {
             </span>
           ) : (
             <span className="flex items-center justify-center">
-              Subscribe
+              Stay Updated
             </span>
           )}
         </button>
